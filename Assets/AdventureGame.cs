@@ -2,11 +2,17 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class TextController : MonoBehaviour {
+public class AdventureGame : MonoBehaviour
+{
+    [SerializeField] Text textComponent;
+    [SerializeField] State startingState;
 
-	public Text text;
+    State state;
+
+
+    
 	
-	private enum State {one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,
+	/**private enum State {one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,
 						fourteen,fifteen,sixteen,seventeen,eighteen,nineteen,twenty,twentyone,
 						twentytwo,twentythree,twentyfour,twentyfive,twentysix,twentyseven,
 						twenteyeight,twentynine,thirty,thirtyone,thirtytwo,thirtythree,thirtyfour,
@@ -17,14 +23,18 @@ public class TextController : MonoBehaviour {
 	private State myState;
 	private State lastState;
 
-	// Use this for initialization
-	void Start () {
-		myState = State.one;
+	// Use this for initialization**/
+	void Start ()
+    {
+        state = startingState;
+        textComponent.text = state.GetStateStory();
+	
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		print (myState);
+	void Update ()
+    {
+		/**print (myState);
 		if (myState == State.one){ state_one(); }
         else if (myState == State.two) { state_two(); }
         else if (myState == State.three) { state_three(); }
@@ -86,8 +96,9 @@ public class TextController : MonoBehaviour {
         else if (myState == State.fiftynine) { state_fiftynine(); }
         else if (myState == State.sixty) { state_sixty(); }
       
-
+    **/
     }
+    /**
     #region state handler code
     void state_one(){
 		text.text = "Staring at the message, you realise you are in great danger. "+
@@ -1797,5 +1808,5 @@ public class TextController : MonoBehaviour {
 		
 	}
 #endregion
-    
+  **/  
 }
